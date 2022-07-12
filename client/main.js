@@ -40,4 +40,4 @@ const postInspired = () => {
 complimentBtn.addEventListener('click', getCompliment)
 fortunesBtn.addEventListener('click', getFortunes)
 encourageBtn.addEventListener('click', getEncouragement)
-postBtn.addEventListener('click', )
+postBtn.addEventListener('click', postInspired)
