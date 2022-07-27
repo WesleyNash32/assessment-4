@@ -1,8 +1,8 @@
 const complimentBtn = document.getElementById("complimentButton")
 const fortunesBtn = document.getElementById("fortunesButton")
-const encourageBtn = document.getElementById("encourageButton")
-const inspiredInput = document.getElementById("postInput");
-const postBtn = document.getElementById("postButton")
+const nameInput = document.getElementById("nameInput")
+const nameBtn = document.getElementById("nameButton")
+const dropDown = document.getElementById("selectTab")
 
 const getCompliment = () => {
     axios.get("http://localhost:4000/api/compliment/")
@@ -17,27 +17,26 @@ const getFortunes = () => {
         .then(res => {
             const data = res.data;
             alert(data);
-        })
-}
+        });
+};
 
-const getEncouragement = () => {
-    axios.get("http://localhost:4000/api/encouragement/")
-        .then(res => {
-            const data = res.data;
-            alert(data);
+const postName = () => {
+    const nameBody = {
+        name: nameInput.value
+    }
+    axios.post("http://localhost:4000/api/post/name", nameBody)
+    .then((res) => {
+        alert(res.data)
     })
-}
+};
 
-const postInspired = () => {
-    const inspirations = {
-        "firstInspired": "chicken",
-        "secondInspired": "Pizza",
-        "thirdInspired": "money"
+const putDino = () => {
+    const putAnimal = {
         
     }
 }
 
 complimentBtn.addEventListener('click', getCompliment)
 fortunesBtn.addEventListener('click', getFortunes)
-encourageBtn.addEventListener('click', getEncouragement)
-postBtn.addEventListener('click', postInspired)
+nameBtn.addEventListener('click', postName)
+dropDown.addEventListener

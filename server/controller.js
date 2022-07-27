@@ -1,3 +1,5 @@
+const nameArr = ["Soundwave", "Shockwave", "Megatron", "Starscream"]
+
 module.exports = {
 
     getCompliment: (req, res) => {
@@ -19,13 +21,18 @@ module.exports = {
         res.status(200).send(randomFortunes);
     },
 
-    getEncouragement: (req, res) => {
-        const encouragement = ["You can do this!", "Let's getter done!!", "Eat the Chicken!", "May the force be with you."]
+    postName: (req, res) => {
+        console.log('Endpoint hit')
+        console.log(req.body);
 
-        let randomIndex = Math.floor(Math.random() * encouragement.length);
-        let randomEncouragement = encouragement[randomIndex];
+        nameArr.push(req.body.name);
+        res.status(200).send(nameArr);
+    },
 
-        res.status(200).send(randomEncouragement);
+    putDino: (req, res) => {
+        console.log('put point hit');
+        console.log(req,body);
+        res.status(200).send()
     }
-    
+
 }
