@@ -1,4 +1,6 @@
 const nameArr = ["Soundwave", "Shockwave", "Megatron", "Starscream"]
+const dinoArr = ["raptor", "t-rex", "stegosaurus"]
+const drinkArr = ["pepsi", "coca-cola", "sprite"]
 
 module.exports = {
 
@@ -29,5 +31,19 @@ module.exports = {
         res.status(200).send(nameArr);
     },
 
-    
+    postDino: (req, res) => {
+        console.log('Endpoint hit')
+        console.log(req.body);
+
+        dinoArr.push(req.body.dino);
+        res.status(200).send(dinoArr)
+    },
+
+    postDrink: (req, res) => {
+        console.log('Endpoint hit')
+        console.log(req.body);
+
+        drinkArr.push(req.body.drinks);
+        res.status(200).send(drinkArr)
+    }
 }
