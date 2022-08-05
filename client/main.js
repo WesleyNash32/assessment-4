@@ -30,12 +30,6 @@ const postName = () => {
     })
 };
 
-const putDino = () => {
-    const putAnimal = {
-        
-    }
-}
-
 complimentBtn.addEventListener('click', getCompliment)
 fortunesBtn.addEventListener('click', getFortunes)
 nameBtn.addEventListener('click', postName)

@@ -29,10 +29,5 @@ module.exports = {
         res.status(200).send(nameArr);
     },
 
-    putDino: (req, res) => {
-        console.log('put point hit');
-        console.log(req,body);
-        res.status(200).send()
-    }
-
+    
 }
